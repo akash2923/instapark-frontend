@@ -1,0 +1,147 @@
+/* signin.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+ 
+  
+  .signin-maindiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    height: 100vh;
+  }
+  
+  .signin-div {
+    width: 50%;
+    padding: 20px;
+    margin-left: 100px;
+    color: white;
+    
+  }
+  
+  .signintext {
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .signin-username,
+  .phonenumber,
+  .signin-password {
+  margin-top: 20px;
+  }
+  .signin-username label{
+    font-size: 15px;
+ }
+ .signin-password label{
+    font-size: 15px;
+ }
+ .phonenumber label{
+    font-size: 15px;
+ }
+ .signin-username{
+    margin-top: 50px;
+ }
+ 
+  
+  input {
+    width: 530px;
+    padding: 12px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #444;
+    color: white;
+    font-size: 16px;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #fff;
+  }
+  
+  button {
+    width: 240px;
+    padding: 14px;
+    border: none;
+    background-color: #000;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 40px;
+  }
+  
+  button:hover {
+    background-color: #080808;
+  }
+  
+  .signin-text {
+    width: 100%;
+    color: white;
+    padding: 40px;
+    text-align: center;
+    
+  }
+  
+  .signin-text h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .signin-text p {
+    font-size: 16px;
+    width: 100%px;
+    text-align: center;
+    
+  }
+  .signup-btn {
+    display: block;
+    margin: 20px 0px;
+    width: 240px;
+    padding: 14px;
+    border: none;
+    background-color: #000;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+}
+.signup-btn:hover {
+    background-color: #080808;
+}
+
+  .btn-end{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+.navigate-text {
+    color: white;
+    font-size: 14px;
+    margin-left: 40px;
+}
+
+.signin-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+.signin-link:hover {
+    color: #ddd;
+    text-decoration: underline;
+}
+  
+  
+
+

@@ -1,0 +1,131 @@
+.footer-container{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 770px;
+    background-color: #3E3E3E;
+    border: 2px solid black;
+    margin-top: 100px;
+}
+.footer-left{
+    color: #ffffff;
+    margin-top: 95px;
+    width: 600px;
+}
+.footer-logo{
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+}
+.footer-description{
+    margin-top: 20px;
+    font-size: 18px;
+}
+.footer-links {
+    list-style: none; /* Remove bullets */
+    padding: 0;
+    margin: 20px 0; /* Add some spacing around the list */
+  }
+  
+  .footer-links li {
+    margin-bottom: 10px; /* Add spacing between each link */
+  }
+  
+  .footer-links a {
+    text-decoration: none; /* Remove underline */
+    color: #ffffff; /* Dark gray color for the text */
+    font-size: 16px; /* Adjust font size */
+    transition: color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+  }
+  .footer-copyright{
+    margin-top: 40%;
+    opacity: 20%;
+  }
+  
+  .footer-right {
+    width: 660px;
+    height: 700px;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 30px;
+    padding: 20px; /* Add padding to ensure spacing within the container */
+    box-sizing: border-box;
+    margin-top: 20px; /* Include padding and border in element's total width */
+  }
+  
+  .get-in-touch-heading {
+    font-size: 40px;
+    margin-bottom: 20px;
+    margin-top: 10px; /* Adjusted for better spacing */
+    font-weight: bold;
+    text-align: center;
+    color: #000000;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+   
+  }
+  
+  .contact-form label {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 0px;
+  }
+  
+  .form-input {
+    width: 100%; /* Ensure inputs fit within the container */
+    max-width: 580px; /* Maximum width to fit inside the footer */
+    height: 50px; /* Adjusted height for better fit */
+    background-color: #fff;
+    border: 2px solid #000;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 30px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-input:focus {
+    border-color: #000000;
+  }
+  
+  .form-textarea {
+    width: 100%; /* Ensure textarea fits within the container */
+    max-width: 580px; /* Maximum width to fit inside the footer */
+    height: 100px; /* Adjusted height for better fit */
+    background-color: #fff;
+    border: 2px solid #000;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 20px;
+    outline: none;
+    resize: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-textarea:focus {
+    border-color: #000000;
+  }
+  
+  .form-submit-btn {
+    width: 150px; /* Reduced width to fit the layout */
+    height: 50px; /* Adjusted height for better fit */
+    background-color: #000;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-top: 0px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: center; /* Center-align the button within the form */
+  }
+  
+  .form-submit-btn:hover {
+    background-color: #333;
+    transform: scale(1.05);
+  }
+  

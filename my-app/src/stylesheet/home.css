@@ -1,0 +1,28 @@
+.background{
+    background-image: url("D:\React project\my-app\src\assets\purplebg.png");
+    background-size: cover; 
+    background-position: center;    
+    width: 720px;
+    height: 220px;
+    position: relative;
+    margin-top: 110px;
+}
+
+.home-header{
+    text-align: center;
+    margin-top: 125px;
+    position: absolute;
+    top: 18%;
+    left:32%;
+}
+.home-header h1{
+    font-size: 48px;
+}
+.home-header p{
+    margin-top: 30px;
+    font-size: 20px;
+}
+.nav-bar-profile{
+    height: 50px;
+    width: 50px;
+}
