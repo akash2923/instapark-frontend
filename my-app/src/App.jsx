@@ -9,7 +9,6 @@ import ContactUs from './components/contact';
 import Home from './components/home';
 import Booking from './components/booking-slot'; 
 import Details from './components/details'; 
-import AboutUs from './components/about';
 
 function App() {
   return (

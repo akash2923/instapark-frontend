@@ -1,6 +1,7 @@
 // src/components/SignUp.js
 import "../stylesheet/signup.css";
 import React, { useState } from "react";
+import axios from "axios";
 import { Link } from 'react-router-dom';
 
 function SignUp() {
@@ -30,6 +31,19 @@ function SignUp() {
     // Add form submission logic (e.g., send data to server)
     console.log("Form submitted successfully:", formData);
   };
+  const HandleSignUp = async () => {
+    const {rePassword,...signUpData} = formData;
+    try {
+      console.log("signUpData",signUpData)
+        const response = await axios.post("https://localhost:7130/User/signup", signUpData);
+        console.log("Sign up successful:", response.data);
+        // Handle success (e.g., redirect to another page or show a success message)
+    } catch (error) {
+        console.error("Error signing up:", error);
+        // Handle error (e.g., display an error message to the user)
+    }
+};
+
 
   return (
     <div className="signup-maindiv">
@@ -99,7 +113,7 @@ function SignUp() {
             />
           </div>
           <div className="btn-end">
-            <button type="submit" className="signup-btn">Sign Up</button>
+            <button type="submit" className="signup-btn" onClick={HandleSignUp} >Sign Up</button>
             <p className="navigate-text">
               Already have an account?{" "}
               <Link to="/" className="signin-link">Sign-In</Link>
