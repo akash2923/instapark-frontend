@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import "../stylesheet/details.css";
+import axios from 'axios';
 
 const Details = () => {
   const location = useLocation();
@@ -10,28 +11,26 @@ const Details = () => {
   const selectedSlot = location.state?.selectedSlot || '';
 
   // State variables for form inputs
-  const [name, setName] = useState('');
+  const [userName, setName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [numberPlate, setNumberPlate] = useState('');
-  const [timing, setTiming] = useState('');
 
   // Handle the booking confirmation
-  const handleConfirmBooking = () => {
-    if (!name || !phoneNumber || !numberPlate || !timing) {
+  const handleConfirmBooking = async() => {
+    if (!userName || !phoneNumber || !numberPlate) {
       alert('Please fill out all fields!');
       return;
     }
-
-    console.log({
-      name,
-      phoneNumber,
-      numberPlate,
-      timing,
-      selectedSlot,
-    });
+    try{
+      console.log("am in ")
+      const response = await axios.post("https://localhost:7130/User/Booking",{userName,phoneNumber,numberPlate,selectedSlot})
+      console.log(response);
+    }
+    catch(error){
+      console.log(error);
+    };
 
     alert('Booking Confirmed!');
-    navigate('/'); // Navigate to the home page or any other page after confirmation
   };
 
   // Handle Back Navigation
@@ -57,7 +56,7 @@ const Details = () => {
         <label>Name:</label>
         <input
           type="text"
-          value={name}
+          value={userName}
           onChange={(e) => setName(e.target.value)}
           className="form-input"
           required
@@ -84,14 +83,7 @@ const Details = () => {
         />
 
         {/* Input for Timing */}
-        <label>Timing:</label>
-        <input
-          type="time"
-          value={timing}
-          onChange={(e) => setTiming(e.target.value)}
-          className="form-input"
-          required
-        />
+        
 
         <div className="button-group">
           {/* Back Button */}
