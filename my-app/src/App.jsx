@@ -9,6 +9,7 @@ import ContactUs from './components/contact';
 import Home from './components/home';
 import Booking from './components/booking-slot'; 
 import Details from './components/details'; 
+import CloseSlot from './components/closeslot'; 
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/details" element={<Details />} />
+        <Route path="/closeslot" element={<CloseSlot/>}/>
        
 
       </Routes>

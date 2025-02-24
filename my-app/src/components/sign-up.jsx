@@ -2,9 +2,10 @@
 import "../stylesheet/signup.css";
 import React, { useState } from "react";
 import axios from "axios";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function SignUp() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: "",
     phoneNumber: "",
@@ -37,6 +38,7 @@ function SignUp() {
       console.log("signUpData",signUpData)
         const response = await axios.post("https://localhost:7130/User/signup", signUpData);
         console.log("Sign up successful:", response.data);
+        navigate('/login');
         // Handle success (e.g., redirect to another page or show a success message)
     } catch (error) {
         console.error("Error signing up:", error);

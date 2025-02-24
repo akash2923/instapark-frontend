@@ -44,21 +44,31 @@
   .suggestion-item:hover {
     background-color: #f1f1f1;
   }
-  
-  button {
-    width: 443px;
-    height: 65px;
-    margin-top: 50px;
-    padding: 10px 20px;
+  .bookslot{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 25%;
+    width: 660px;
+    padding: 20px 0px;
+    color: white;
+    margin-top: 20px;
+  }
+  .bookbtn{
+    background-color: black;
     font-size: 16px;
-    background-color: #000000;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    border-radius: 30px;
+    padding: 15px;
+    border-radius: 20px;
+    width:150px;
+    text-align: center;
+  }
+  .closebtn{
+    background-color: black;
+    font-size: 16px;
+    padding: 15px;
+    border-radius: 20px;
+    width:150px;
+    text-align: center;
   }
   
-  button:hover {
-    background-color: #302e2e;
-    border: none;
-  }
   

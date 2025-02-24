@@ -1,0 +1,19 @@
+.details{
+    width: 50%;
+    height: 200px;
+    color:#000;
+    display: flex;
+    flex-direction: column;
+    margin: 10% 10%;
+    border: 2px solid black;
+}
+.details h5{
+    padding: 2px 20px;
+    font-size: 20px;
+}
+.detailslist{
+    margin-top: 20px;
+}
+.closebtn-2{
+    margin-top: 40px;
+}

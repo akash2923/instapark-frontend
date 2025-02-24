@@ -2,15 +2,36 @@
 import '../stylesheet/signin.css';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
 
 function SignIn() {
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  let data= null;
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission logic here
   };
+
+  const handlesignin = async () => {
+    try {
+        const response = await axios.post("https://localhost:7130/User/signin", { username, password });
+        console.log("Sign in successful:", response.data);
+        data = response.data; 
+        console.log("data",data);       
+        navigate('/');
+        alert("signin Successfull");
+    } 
+    catch (error) {
+        console.error("Error signing in:", error);
+    }
+};
+
 
   return (
     <div className="signin-maindiv">
@@ -40,7 +61,7 @@ function SignIn() {
             />
           </div>
           <div className="btn-end">
-            <button type="submit" className="signup-btn">Sign In</button>
+            <button type="submit" className="signup-btn" onClick={handlesignin}>Sign In</button>
             <p className="navigate-text">
               Don't have an account?{" "}
               <Link to="/signup" className="signin-link">Sign-Up</Link>

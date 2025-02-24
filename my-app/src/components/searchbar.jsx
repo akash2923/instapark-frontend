@@ -9,12 +9,12 @@ const SearchBar = () => {
     const navigate = useNavigate()
   
 
-  const mallList = ['VR Mall', 'Phoenix Mall', 'Wave Mall', 'City Centre', 'Mall of India'];
+  const mallList = ['Rit Mall'];
   console.log("its suggestion", suggestions);
   console.log("query1", query);
 
-  const targetLatitude = 13.100767714568137; 
-  const targetLongitude = 80.11160936323166;
+  const targetLatitude =  13.100767714568137; //13.038420375354919;
+  const targetLongitude =  80.11160936323166; //80.04539349561912;
   
   const handleslot = () => {
       console.log("its inside");
@@ -40,6 +40,10 @@ const SearchBar = () => {
           alert("Not in the mall list.");
       }
   };
+  // function to close a slot 
+  const handleCloseSlot = () =>{
+    navigate('/closeslot');
+  }
   
   // Function to calculate the distance between two coordinates (Haversine formula)
   const calculateDistance = (lat1, lon1, lat2, lon2) => {
@@ -94,8 +98,14 @@ const SearchBar = () => {
       )}
 
       <div>
-      <div className='bookslot' onClick={handleslot}>
-          <h5 className='slotbtn'>Book a Slot</h5>
+      <div className='bookslot'>
+        <div className="book-div" onClick={handleslot}>
+          <h5 className='bookbtn'>Book a Slot</h5>
+        </div>
+        <div className="close-div" onClick={handleCloseSlot}>
+          <h5 className='closebtn'>Close the slot</h5>
+        </div>
+          
         </div>
       </div>
     </div>
