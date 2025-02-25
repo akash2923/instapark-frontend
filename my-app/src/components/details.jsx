@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 import "../stylesheet/details.css";
 import axios from 'axios';
 
 const Details = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const notify = () => toast("Succesfully Booked!");
 
   // Retrieve the selected slot passed from the previous component
   const selectedSlot = location.state?.selectedSlot || '';
+  const Name = location.state?.userName || '';
 
   // State variables for form inputs
   const [userName, setName] = useState('');
@@ -29,8 +32,7 @@ const Details = () => {
     catch(error){
       console.log(error);
     };
-
-    alert('Booking Confirmed!');
+    
   };
 
   // Handle Back Navigation
@@ -53,7 +55,7 @@ const Details = () => {
         />
 
         {/* Input for Name */}
-        <label>Name:</label>
+        <label>Enter UserName:</label>
         <input
           type="text"
           value={userName}
@@ -100,8 +102,10 @@ const Details = () => {
             type="button"
             className="confirm-btn"
             onClick={handleConfirmBooking}
+            
           >
             Confirm Booking
+            
           </button>
         </div>
       </form>

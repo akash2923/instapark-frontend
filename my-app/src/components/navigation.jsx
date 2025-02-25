@@ -13,8 +13,8 @@ function NavBar() {
 
       {/* Navigation Links */}
       <ul className="nav-bar-links">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/login">Login</Link></li>
+        <li><Link to="/home">Home</Link></li>
+        <li><Link to="/">Login</Link></li>
         <li><Link to="/feedback">Feedback</Link></li>
         <li><Link to="/contact-us">Contact Us</Link></li>
         <li><Link to="/about-us">About Us</Link></li>

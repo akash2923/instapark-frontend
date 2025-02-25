@@ -24,7 +24,7 @@ function SignIn() {
         console.log("Sign in successful:", response.data);
         data = response.data; 
         console.log("data",data);       
-        navigate('/');
+        navigate('/home', {state:{data}});
         alert("signin Successfull");
     } 
     catch (error) {

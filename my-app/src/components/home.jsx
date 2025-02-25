@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import PurpleBG from "../assets/purplebg.png";
 import "../stylesheet/home.css";
 import  SearchBar from "../components/searchbar";
@@ -7,6 +8,7 @@ import Footer from "../components/footer.jsx"
 
 
 function Home() {
+  
   return (
     <div className="home-main">
       <div className="background"></div>
