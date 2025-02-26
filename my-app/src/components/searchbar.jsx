@@ -10,7 +10,7 @@ const SearchBar = () => {
     const navigate = useNavigate()
     const location = useLocation();
     const userName = location.state?.data || '';
-    console.log('userName',userName)
+    console.log('userName2',userName)
    
 
     // useEffect = (()=>{
@@ -19,7 +19,7 @@ const SearchBar = () => {
   
 
   const mallList = ['RIT MALL'];
-  
+
 
   const targetLatitude =  13.100767714568137; //13.038420375354919;
   const targetLongitude =  80.11160936323166; //80.04539349561912;

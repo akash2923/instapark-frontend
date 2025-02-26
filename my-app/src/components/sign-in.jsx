@@ -21,10 +21,10 @@ function SignIn() {
   const handlesignin = async () => {
     try {
         const response = await axios.post("https://localhost:7130/User/signin", { username, password });
-        console.log("Sign in successful:", response.data);
-        data = response.data; 
+        console.log("Sign in successful:", response.data[0]?.userName || '');
+        data = response.data[0]?.userName||""; 
         console.log("data",data);       
-        navigate('/home', {state:{data}});
+        navigate('/home', { state: { data} });
         alert("signin Successfull");
     } 
     catch (error) {

@@ -8,8 +8,8 @@ const Booking = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const mallName = location.state?.query || '';
-  const userName = location.state?.userName || '';
-  console.log("username2",userName)
+ // const userName = location.state?.userName || '';
+  //console.log("username2",userName)
 
   const [slots, setSlots] = useState([]);
   console.log('mallName', mallName);
@@ -39,7 +39,7 @@ const Booking = () => {
   // Handle the booking action
   const handleBookSlot = () => {
     if (selectedSlot) {
-      navigate('/details', { state: { selectedSlot,userName} }); // Navigate to the details page with selected slot
+      navigate('/details', { state: { selectedSlot} }); // Navigate to the details page with selected slot
     } else {
       alert('Please select a slot before proceeding!'); // Alert if no slot is selected
     }

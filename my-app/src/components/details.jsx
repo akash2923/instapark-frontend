@@ -28,6 +28,9 @@ const Details = () => {
       console.log("am in ")
       const response = await axios.post("https://localhost:7130/User/Booking",{userName,phoneNumber,numberPlate,selectedSlot})
       console.log(response);
+      alert("Successfully Booked")
+      navigate("/home")
+
     }
     catch(error){
       console.log(error);
@@ -58,7 +61,7 @@ const Details = () => {
         <label>Enter UserName:</label>
         <input
           type="text"
-          value={userName}
+          //value={userName}
           onChange={(e) => setName(e.target.value)}
           className="form-input"
           required
