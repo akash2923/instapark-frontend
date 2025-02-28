@@ -8,11 +8,12 @@ const SearchBar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const userName = location.state?.userName || '';
+  //const selectedSlot = location.state?.selectedSlot || '';
   console.log('userName in SearchBar:', userName);
 
   const mallList = ['RIT MALL'];
-  const targetLatitude = 13.100767714568137;
-  const targetLongitude = 80.11160936323166;
+  const targetLatitude = 13.096111547096362;
+  const targetLongitude =80.10960961240892;  
 
   const handleslot = () => {
     if (mallList.some((mall) => mall.toLowerCase().includes(query.toLowerCase()))) {
