@@ -1,37 +1,29 @@
-// src/components/SignIn.js
 import '../stylesheet/signin.css';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-
 function SignIn() {
-
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  let data= null;
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
   };
 
   const handlesignin = async () => {
     try {
-        const response = await axios.post("https://localhost:7130/User/signin", { username, password });
-        console.log("Sign in successful:", response.data[0]?.userName || '');
-        data = response.data[0]?.userName||""; 
-        console.log("data",data);       
-        navigate('/home', { state: { data} });
-        alert("signin Successfull");
-    } 
-    catch (error) {
-        console.error("Error signing in:", error);
+      const response = await axios.post("https://localhost:7130/User/signin", { username, password });
+      console.log("Response data:", response.data);
+      const userName = response.data[0]?.userName || "";
+      navigate('/home', { state: { userName } }); // Pass userName to the next component
+      alert("Sign in successful!");
+    } catch (error) {
+      console.error("Error signing in:", error);
+      alert("Sign in failed. Please check your credentials.");
     }
-};
-
+  };
 
   return (
     <div className="signin-maindiv">
@@ -78,4 +70,3 @@ function SignIn() {
 }
 
 export default SignIn;
-

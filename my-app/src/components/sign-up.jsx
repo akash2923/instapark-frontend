@@ -124,7 +124,7 @@ function SignUp() {
         </form>
       </div>
       <div className="signup-text">
-        <h1>Join the Parking Revolution</h1>
+        <h1 clasaName = "sign-up-h1">Join the Parking Revolution</h1>
         <p>“Create an account to experience effortless parking”</p>
       </div>
     </div>

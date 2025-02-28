@@ -8,40 +8,31 @@ const Booking = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const mallName = location.state?.query || '';
- // const userName = location.state?.userName || '';
-  //console.log("username2",userName)
-
+  const userName = location.state?.userName || '';
   const [slots, setSlots] = useState([]);
-  console.log('mallName', mallName);
-
-  // Handle slot selection (check if slot is available)
-  const handleSlotSelection = (slot) => {
-    // Prevent selecting if the slot is booked
-    if (slot.isAvaliable === 0) {
-      return;
-    }
-    setSelectedSlot(slot.selectedSlot); // Set the selected slot
-  };
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.post("https://localhost:7130/User/SeatsBlocked", { mallName });
-        console.log(response.data);
-        setSlots(response.data); // Set the slot data from the API response
+        setSlots(response.data);
       } catch (e) {
         console.log('Error', e);
       }
     };
-    fetchData(); // Fetch slots when component is mounted or mallName changes
+    fetchData();
   }, [mallName]);
 
-  // Handle the booking action
+  const handleSlotSelection = (slot) => {
+    if (slot.isAvaliable === 0) return;
+    setSelectedSlot(slot.selectedSlot);
+  };
+
   const handleBookSlot = () => {
     if (selectedSlot) {
-      navigate('/details', { state: { selectedSlot} }); // Navigate to the details page with selected slot
+      navigate('/details', { state: { selectedSlot, userName } }); // Pass userName to Details
     } else {
-      alert('Please select a slot before proceeding!'); // Alert if no slot is selected
+      alert('Please select a slot before proceeding!');
     }
   };
 
@@ -53,13 +44,11 @@ const Booking = () => {
         {slots.map((slot, index) => (
           <div
             key={index}
-            className={`parking-slot 
-                        ${slot.isAvaliable === 0 ? 'bookedslot' : ''} 
-                        ${selectedSlot === slot.selectedSlot ? 'selected' : ''}`}
-            onClick={() => handleSlotSelection(slot)} // Select the slot if available
+            className={`parking-slot ${slot.isAvaliable === 0 ? 'bookedslot' : ''} ${selectedSlot === slot.selectedSlot ? 'selected' : ''}`}
+            onClick={() => handleSlotSelection(slot)}
             style={{
-              backgroundColor: slot.isAvailable === 0 ? 'red' : '', // Red for booked slots
-              cursor: slot.isAvailable === 0 ? 'not-allowed' : 'pointer' // Disable pointer for booked slots
+              backgroundColor: slot.isAvailable === 0 ? 'red' : '',
+              cursor: slot.isAvailable === 0 ? 'not-allowed' : 'pointer'
             }}
           >
             {slot.selectedSlot}

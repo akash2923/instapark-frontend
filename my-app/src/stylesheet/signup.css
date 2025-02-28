@@ -89,10 +89,11 @@ button:hover {
     text-align: center;
 }
 
-.signup-text h1 {
+.sign-up-h1 {
     font-size: 60px;
     margin-bottom: 20px;
     font-weight: bold;
+    color:#ffffff ;
 }
 
 .signup-text p {
